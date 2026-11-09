@@ -1,0 +1,103 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, sans-serif;
+  background: #141110;
+  color: #fff4e6;
+  --page-amber: #ffc278;
+  --page-muted: #c7b5a5;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at 50% 0%, #302219 0%, transparent 64%) no-repeat;
+}
+
+#cinema {
+  width: min(100% - 32px, 960px);
+  margin-inline: auto;
+  padding-block: 22px 30px;
+}
+
+.cinema-masthead {
+  min-height: 42px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #59463a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.cinema-mark,
+.cinema-edition,
+.cinema-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .17em;
+}
+
+.cinema-mark {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.cinema-mark svg,
+.cinema-kicker,
+.cinema-intro h1 span {
+  color: var(--page-amber);
+}
+
+.cinema-edition {
+  color: var(--page-muted);
+}
+
+.cinema-intro {
+  padding-block: 23px 21px;
+}
+
+.cinema-intro h1 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(2.3rem, 6vw, 4.25rem);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+}
+
+.cinema-intro p {
+  margin: 9px 0 0;
+}
+
+.cinema-intro .cinema-kicker {
+  margin: 0 0 6px;
+}
+
+.cinema-intro p:not(.cinema-kicker),
+.cinema-credit {
+  color: var(--page-muted);
+}
+
+.cinema-screening {
+  margin: 0;
+}
+
+.cinema-screening figcaption {
+  padding-block: 14px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-size: 13px;
+}
+
+.cinema-screening a {
+  color: var(--page-amber);
+  text-underline-offset: 3px;
+}
+
+.cinema-screening a:focus-visible {
+  outline: 2px solid #ffe5a8;
+  outline-offset: 4px;
+}

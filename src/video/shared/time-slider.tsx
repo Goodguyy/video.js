@@ -24,6 +24,7 @@ export function TimeSlider({ audio = false, renderThumbnail }: ThumbnailSlot & {
             </div>
           )}
         ></TimeSliderPrimitive.Chapters>
+        {!audio && <span className="cinema-weave" aria-hidden="true" />}
         <TimeSliderPrimitive.Thumb className={'media-time-slider-thumb'} />
 
         <TimeSliderPrimitive.Preview className={'media-time-slider-preview'}>

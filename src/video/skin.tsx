@@ -4,6 +4,7 @@
 
 import '../styles/video/scaffold.css';
 import './skin.css';
+import './cinema.css';
 import { Container as ContainerPrimitive, Poster as PosterPrimitive, Slider as SliderPrimitive } from '@videojs/react';
 import type { ReactNode } from 'react';
 
@@ -16,7 +17,7 @@ import { ErrorDialog } from './shared/error-dialog';
 import { Indicators } from './shared/indicators';
 import { SeekIndicator } from './shared/seek-indicator';
 import { StatusAnnouncer } from './shared/status-announcer';
-import { Poster } from './shared/video-feedback';
+import { BufferingIndicator, Poster } from './shared/video-feedback';
 
 export interface VideoSkinProps extends Omit<ContainerPrimitive.Props, 'children'> {
   children?: ReactNode;
@@ -27,13 +28,16 @@ export interface VideoSkinProps extends Omit<ContainerPrimitive.Props, 'children
 export function VideoSkin({ children, className, renderPoster, renderThumbnail, ...props }: VideoSkinProps = {}) {
   return (
     <ContainerPrimitive
-      className={cn('media-skin', 'media-container', 'media-video', className)}
+      className={cn('media-skin', 'media-container', 'media-video', 'afroclip-cinema', className)}
       data-theme="scaffold"
       data-preset="video"
       {...props}
     >
-      {children}
-      <Poster renderImage={renderPoster} />
+      <div className="cinema-stage">
+        {children}
+        <Poster renderImage={renderPoster} />
+        <BufferingIndicator />
+      </div>
       <ErrorDialog />
       <VideoControls renderThumbnail={renderThumbnail} />
 

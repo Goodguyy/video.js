@@ -23,7 +23,7 @@ body {
 
 /* The aspect ratio option overrides the skin's own; `auto` lets the media's intrinsic size decide. */
 .preview-player[style*="--preview-player-ratio"] .media-skin {
-  aspect-ratio: var(--preview-player-ratio);
+  --media-stage-ratio: var(--preview-player-ratio);
 }
 
 /* Player elements only provide state; the skin inside them is the box that gets sized. */

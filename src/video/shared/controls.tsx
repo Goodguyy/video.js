@@ -19,6 +19,7 @@ export function ControlsRow({
   rate,
   seekBackward,
   seekForward,
+  trailing,
 }: ControlsSlots & { audio?: boolean; live?: boolean; menu?: ReactNode } = {}) {
   return (
     <Controls.Group className={'video-controls-row'}>
@@ -42,6 +43,7 @@ export function ControlsRow({
         {captions}
         {rate}
         {menu ?? (audio && <VolumePopover />)}
+        {trailing}
       </Controls.Group>
     </Controls.Group>
   );
@@ -50,6 +52,7 @@ export function ControlsRow({
 export interface ControlsSlots extends ThumbnailSlot {
   /** The captions toggle, supplied by the video presets because the audio presets have no text track feature. */
   captions?: ReactNode;
+  trailing?: ReactNode;
   /** The playback-rate control, supplied by the on-demand audio preset. */
   rate?: ReactNode;
   /** The skip-back control, supplied by the presets that have a timeline. */
